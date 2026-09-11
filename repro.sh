@@ -46,7 +46,7 @@ while [ "$ok" -lt 2 ]; do
   sleep 1
 done
 
-docker cp repro.sql "$NAME:/tmp/repro.sql"
+docker cp repro.sql "$NAME:/tmp/repro.sql" >/dev/null 2>&1 || { echo "Could not copy repro.sql into $NAME" >&2; exit 2; }
 echo "Running repro.sql"
 echo
 
