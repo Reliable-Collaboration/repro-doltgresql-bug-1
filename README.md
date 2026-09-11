@@ -10,6 +10,8 @@ ERROR:  Invalid default value for '(coalesce("a" + 1 as a + 1,0))': at or near "
 
 PostgreSQL 18.6 runs the same statements without an error.
 
+Reported upstream: https://github.com/dolthub/doltgresql/issues/3323
+
 ## Reproduce it
 
 You need Docker and a POSIX shell: Linux, macOS, or Windows with WSL. The first run downloads the image.
