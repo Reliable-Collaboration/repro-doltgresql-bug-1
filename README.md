@@ -40,7 +40,7 @@ The same steps by hand, from the repository directory:
 ```sh
 docker run -d --name doltgresql-bug-1 -e DOLTGRES_PASSWORD=password dolthub/doltgresql:1.3.1
 docker cp repro.sql doltgresql-bug-1:/tmp/repro.sql
-docker exec -t -e PGPASSWORD=password doltgresql-bug-1 psql -X -h 127.0.0.1 -U postgres -d postgres --echo-all -f /tmp/repro.sql
+docker exec -t -e PGPASSWORD=password doltgresql-bug-1 psql -X -P pager=off -h 127.0.0.1 -U postgres -d postgres --echo-all -f /tmp/repro.sql
 docker rm -f doltgresql-bug-1
 ```
 
